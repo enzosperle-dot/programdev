@@ -1998,6 +1998,24 @@
       box-shadow: 0 8px 24px var(--brand-glow);
     }
 
+    /* SVGs inline — garantir alinhamento e cor corretos */
+    .pillar__icon svg,
+    .service-card__icon svg,
+    .benefit-icon svg,
+    .dash-sidebar__item svg,
+    .condo-row__icon svg,
+    .condo-header-title svg {
+      display: block;
+      flex-shrink: 0;
+      color: currentColor;
+    }
+
+    .pillar__icon svg       { width: 18px; height: 18px; }
+    .service-card__icon svg { width: 22px; height: 22px; }
+    .benefit-icon svg       { width: 20px; height: 20px; }
+    .dash-sidebar__item svg { width: 15px; height: 15px; }
+    .condo-row__icon svg    { width: 13px; height: 13px; }
+
     /* ============================================================
        LOADING SCREEN
        ============================================================ */
@@ -2385,21 +2403,21 @@
 
           <div class="about__pillars">
             <div class="pillar">
-              <div class="pillar__icon">⚡</div>
+              <div class="pillar__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
               <div>
                 <div class="pillar__title">Velocidade de entrega</div>
                 <div class="pillar__desc">Metodologia ágil com ciclos curtos, entregas contínuas e feedback real a cada sprint.</div>
               </div>
             </div>
             <div class="pillar">
-              <div class="pillar__icon">🔬</div>
+              <div class="pillar__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-1M9 21H5a2 2 0 0 1-2-2v-1m0 0h18"/></svg></div>
               <div>
                 <div class="pillar__title">Inovação técnica</div>
                 <div class="pillar__desc">Stack moderna, arquitetura sólida e código que não vira dívida técnica em 6 meses.</div>
               </div>
             </div>
             <div class="pillar">
-              <div class="pillar__icon">🎯</div>
+              <div class="pillar__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
               <div>
                 <div class="pillar__title">Foco em resultado</div>
                 <div class="pillar__desc">Não entregamos apenas código. Entregamos sistemas que resolvem problemas reais de negócio.</div>
@@ -2424,42 +2442,42 @@
 
       <div class="services__grid reveal">
         <div class="service-card">
-          <div class="service-card__icon">🌐</div>
+          <div class="service-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
           <h3 class="service-card__title">Desenvolvimento Web</h3>
           <p class="service-card__desc">Aplicações web modernas com performance, SEO e UX de alto nível. React, Next.js, e tudo que há de melhor no ecossistema front-end.</p>
           <div class="service-card__arrow">→</div>
         </div>
 
         <div class="service-card">
-          <div class="service-card__icon">☁️</div>
+          <div class="service-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
           <h3 class="service-card__title">Sistemas SaaS</h3>
           <p class="service-card__desc">Plataformas SaaS completas com multitenancy, billing, autenticação e infraestrutura escalável desde o primeiro dia.</p>
           <div class="service-card__arrow">→</div>
         </div>
 
         <div class="service-card">
-          <div class="service-card__icon">📱</div>
+          <div class="service-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
           <h3 class="service-card__title">Aplicativos Mobile</h3>
           <p class="service-card__desc">Apps iOS e Android nativos ou cross-platform com React Native. Performance real, não apenas aparência.</p>
           <div class="service-card__arrow">→</div>
         </div>
 
         <div class="service-card">
-          <div class="service-card__icon">🔗</div>
+          <div class="service-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
           <h3 class="service-card__title">APIs & Integrações</h3>
           <p class="service-card__desc">RESTful APIs, GraphQL, webhooks e integrações com qualquer serviço. Documentação completa e testes automatizados incluídos.</p>
           <div class="service-card__arrow">→</div>
         </div>
 
         <div class="service-card">
-          <div class="service-card__icon">🤖</div>
+          <div class="service-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg></div>
           <h3 class="service-card__title">Automação</h3>
           <p class="service-card__desc">Automatizamos processos manuais, repetitivos e caros. Bots, pipelines, RPA e integrações entre sistemas legados.</p>
           <div class="service-card__arrow">→</div>
         </div>
 
         <div class="service-card">
-          <div class="service-card__icon">🛠️</div>
+          <div class="service-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
           <h3 class="service-card__title">Softwares Personalizados</h3>
           <p class="service-card__desc">Sistemas sob medida para o seu negócio. ERPs, CRMs, dashboards e ferramentas internas que realmente cabem no seu processo.</p>
           <div class="service-card__arrow">→</div>
@@ -2480,28 +2498,28 @@
           <h2 class="section-title reveal">Construído para<br /><span class="accent">não quebrar.</span></h2>
           <div class="benefits__list" style="margin-top: 40px;">
             <div class="benefit-item active reveal" onclick="setActiveBenefit(this, 'performance')">
-              <div class="benefit-icon">⚡</div>
+              <div class="benefit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
               <div>
                 <div class="benefit-item__title">Alta Performance</div>
                 <div class="benefit-item__desc">Sistemas otimizados para carregar em menos de 1s. Arquitetura pensada para alta concorrência desde o início.</div>
               </div>
             </div>
             <div class="benefit-item reveal" onclick="setActiveBenefit(this, 'security')">
-              <div class="benefit-icon">🔒</div>
+              <div class="benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
               <div>
                 <div class="benefit-item__title">Segurança por padrão</div>
                 <div class="benefit-item__desc">Criptografia, autenticação robusta, proteção contra ataques e boas práticas de segurança em cada linha de código.</div>
               </div>
             </div>
             <div class="benefit-item reveal" onclick="setActiveBenefit(this, 'scale')">
-              <div class="benefit-icon">📈</div>
+              <div class="benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
               <div>
                 <div class="benefit-item__title">Escalabilidade real</div>
                 <div class="benefit-item__desc">Projetamos para crescer. De 100 para 1 milhão de usuários sem reescrever tudo do zero.</div>
               </div>
             </div>
             <div class="benefit-item reveal" onclick="setActiveBenefit(this, 'support')">
-              <div class="benefit-icon">💬</div>
+              <div class="benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
               <div>
                 <div class="benefit-item__title">Suporte dedicado</div>
                 <div class="benefit-item__desc">Time técnico disponível 24/7. Monitoramento proativo, alertas e resposta rápida a incidentes.</div>
@@ -2611,16 +2629,16 @@
           <aside class="dash-sidebar">
             <div class="dash-sidebar__section">
               <div class="dash-sidebar__label">Principal</div>
-              <div class="dash-sidebar__item active"><span class="icon">⬜</span> Visão geral</div>
-              <div class="dash-sidebar__item"><span class="icon">📊</span> Analytics</div>
-              <div class="dash-sidebar__item"><span class="icon">🚀</span> Deploys</div>
-              <div class="dash-sidebar__item"><span class="icon">🔧</span> Projetos</div>
+              <div class="dash-sidebar__item active"><span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span> Visão geral</div>
+              <div class="dash-sidebar__item"><span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span> Analytics</div>
+              <div class="dash-sidebar__item"><span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span> Deploys</div>
+              <div class="dash-sidebar__item"><span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span> Projetos</div>
             </div>
             <div class="dash-sidebar__section">
               <div class="dash-sidebar__label">Configurações</div>
-              <div class="dash-sidebar__item"><span class="icon">👥</span> Time</div>
-              <div class="dash-sidebar__item"><span class="icon">🔑</span> API Keys</div>
-              <div class="dash-sidebar__item"><span class="icon">💳</span> Billing</div>
+              <div class="dash-sidebar__item"><span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span> Time</div>
+              <div class="dash-sidebar__item"><span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 2-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></span> API Keys</div>
+              <div class="dash-sidebar__item"><span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span> Billing</div>
             </div>
           </aside>
 
@@ -2692,7 +2710,7 @@
           <div class="case-card__visual">
             <div class="condo-mockup">
               <div class="condo-header">
-                <span class="condo-header-title">🏢 PredioHub — Painel do Síndico</span>
+                <span class="condo-header-title"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M8 10h.01M16 10h.01M12 14h.01M8 14h.01M16 14h.01"/></svg> PredioHub — Painel do Síndico</span>
                 <span class="online-badge" style="font-size:11px;">Online</span>
               </div>
               <div class="condo-body">
@@ -2711,7 +2729,7 @@
                   </div>
                 </div>
                 <div class="condo-row">
-                  <div class="condo-row__icon">🔔</div>
+                  <div class="condo-row__icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
                   <div class="condo-row__info">
                     <div class="condo-row__title">Comunicado enviado</div>
                     <div class="condo-row__sub">Reunião de condomínio — 28/05 às 19h</div>
@@ -2719,7 +2737,7 @@
                   <span class="condo-row__badge">Enviado</span>
                 </div>
                 <div class="condo-row">
-                  <div class="condo-row__icon">🔧</div>
+                  <div class="condo-row__icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
                   <div class="condo-row__info">
                     <div class="condo-row__title">Manutenção agendada</div>
                     <div class="condo-row__sub">Elevador Bloco B — 29/05</div>
@@ -2727,7 +2745,7 @@
                   <span class="condo-row__badge pending">Pendente</span>
                 </div>
                 <div class="condo-row">
-                  <div class="condo-row__icon">💳</div>
+                  <div class="condo-row__icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
                   <div class="condo-row__info">
                     <div class="condo-row__title">Boletos gerados</div>
                     <div class="condo-row__sub">Maio 2026 — 248 unidades</div>
@@ -2999,7 +3017,7 @@
 
       <div class="footer__bottom">
         <p>© 2026 <span>ProgramDev</span>. Todos os direitos reservados.</p>
-        <p>Feito com ♥ no Rio de Janeiro</p>
+        <p>Feito com <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> no Rio de Janeiro</p>
       </div>
     </div>
   </footer>
@@ -3183,7 +3201,7 @@
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
 
       // Feedback visual
-      btn.textContent = '✓ Abrindo WhatsApp...';
+      btn.textContent = 'Abrindo WhatsApp...';
       btn.style.background = '#25D366';
       btn.disabled = true;
 
