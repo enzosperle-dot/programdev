@@ -1314,107 +1314,269 @@
     }
 
     /* ============================================================
-       TESTIMONIALS
+       CASES — Projetos desenvolvidos
        ============================================================ */
-    .testimonials {
+    .cases {
       padding: var(--section-py) 0;
+      border-top: 1px solid var(--border);
     }
 
-    .testimonials__header {
+    .cases__header {
       text-align: center;
       margin-bottom: 64px;
     }
 
-    .testimonials__header .section-label { justify-content: center; }
-    .testimonials__header .section-label::before { display: none; }
-    .testimonials__header .section-label::after {
+    .cases__header .section-label { justify-content: center; }
+    .cases__header .section-label::before { display: none; }
+    .cases__header .section-label::after {
       content: '';
       display: block; width: 20px; height: 1px;
       background: var(--brand-blue);
     }
 
-    .testimonials__grid {
+    .cases__grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
 
-    .testimonial-card {
+    .case-card {
       background: var(--bg-2);
       border: 1px solid var(--border);
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: all 0.35s var(--ease);
+      position: relative;
+    }
+
+    .case-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 32px 64px rgba(0,0,0,0.5);
+    }
+
+    /* Card em destaque — ocupa largura total */
+    .case-card--featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 340px;
+    }
+
+    .case-card__visual {
+      background: var(--bg-3);
+      border-right: 1px solid var(--border);
       padding: 32px;
-      transition: all 0.3s var(--ease);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
       position: relative;
       overflow: hidden;
     }
 
-    .testimonial-card::before {
-      content: '"';
+    .case-card--featured .case-card__visual {
+      padding: 40px;
+    }
+
+    /* Glow de fundo no visual */
+    .case-card__visual::after {
+      content: '';
       position: absolute;
-      top: -10px;
-      right: 24px;
-      font-size: 120px;
-      font-family: var(--font-display);
-      color: var(--border);
-      line-height: 1;
+      bottom: -60px;
+      left: -60px;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(91,127,212,0.12), transparent 70%);
       pointer-events: none;
     }
 
-    .testimonial-card:hover {
-      border-color: var(--border-hover);
+    /* Mini mockup condominios */
+    .condo-mockup {
       background: var(--surface);
-      transform: translateY(-4px);
-      box-shadow: 0 24px 48px rgba(0,0,0,0.4);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      flex: 1;
     }
 
-    .testimonial-stars {
-      display: flex;
-      gap: 3px;
-      color: var(--brand-blue);
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    .testimonial-text {
-      font-size: 15px;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 28px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .testimonial-author {
+    .condo-header {
+      background: rgba(91,127,212,0.08);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 16px;
       display: flex;
       align-items: center;
-      gap: 14px;
+      justify-content: space-between;
     }
 
-    .testimonial-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--brand-blue-dark), var(--brand-blue));
+    .condo-header-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--brand-blue-light);
+    }
+
+    .condo-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .condo-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      background: var(--bg-3);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    .condo-row__icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: rgba(91,127,212,0.15);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      font-size: 14px;
-      color: white;
+      font-size: 13px;
       flex-shrink: 0;
     }
 
-    .testimonial-name {
-      font-size: 14px;
+    .condo-row__info { flex: 1; }
+
+    .condo-row__title {
+      font-size: 12px;
       font-weight: 600;
       color: var(--text-primary);
     }
 
-    .testimonial-role {
-      font-size: 12px;
+    .condo-row__sub {
+      font-size: 11px;
       color: var(--text-muted);
       margin-top: 2px;
+    }
+
+    .condo-row__badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 100px;
+      background: rgba(40,200,64,0.12);
+      color: #28C840;
+    }
+
+    .condo-row__badge.pending {
+      background: rgba(254,188,46,0.12);
+      color: #FEBC2E;
+    }
+
+    .condo-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .condo-stat {
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px;
+      text-align: center;
+    }
+
+    .condo-stat__num {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--brand-blue);
+    }
+
+    .condo-stat__label {
+      font-size: 10px;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* Conteúdo do card */
+    .case-card__content {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .case-card__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brand-blue);
+      margin-bottom: 16px;
+    }
+
+    .case-card__tag::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--brand-blue);
+    }
+
+    .case-card__title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+
+    .case-card__desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+
+    .case-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .case-tag {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      background: var(--surface);
+    }
+
+    .case-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--brand-blue);
+      transition: gap 0.2s;
+    }
+
+    .case-card__link:hover { gap: 12px; }
+
+    @media (max-width: 768px) {
+      .cases__grid { grid-template-columns: 1fr; }
+      .case-card--featured { grid-template-columns: 1fr; }
+      .case-card--featured .case-card__visual { border-right: none; border-bottom: 1px solid var(--border); min-height: 260px; }
     }
 
     /* ============================================================
@@ -1871,48 +2033,169 @@
     }
 
     /* ============================================================
-       RESPONSIVIDADE
+       RESPONSIVIDADE — Tablet (≤1024px)
        ============================================================ */
     @media (max-width: 1024px) {
-      .about__inner   { grid-template-columns: 1fr; }
-      .about__visual  { height: 320px; }
-      .about__card--float { display: none; }
-      .benefits__inner { grid-template-columns: 1fr; }
-      .benefits__visual { height: 340px; }
-      .services__grid { grid-template-columns: 1fr 1fr; }
-      .contact__inner { grid-template-columns: 1fr; }
-      .contact__info  { padding-right: 0; }
-      .footer__main   { grid-template-columns: 1fr 1fr; }
-      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
-      .dash-body { grid-template-columns: 1fr; }
-      .dash-sidebar { display: none; }
+      /* Layout */
+      .about__inner        { grid-template-columns: 1fr; gap: 48px; }
+      .about__visual       { height: 300px; }
+      .about__card--float  { display: none; }
+      .about__text         { padding-right: 0; }
+
+      .benefits__inner     { grid-template-columns: 1fr; gap: 48px; }
+      .benefits__visual    { height: 320px; }
+
+      .services__grid      { grid-template-columns: 1fr 1fr; }
+
+      .contact__inner      { grid-template-columns: 1fr; gap: 48px; }
+      .contact__info       { padding-right: 0; }
+
+      .footer__main        { grid-template-columns: 1fr 1fr; gap: 40px; }
+
+      /* Dashboard */
+      .kpi-grid            { grid-template-columns: repeat(2, 1fr); }
+      .dash-body           { grid-template-columns: 1fr; }
+      .dash-sidebar        { display: none; }
+
+      /* Cases */
+      .case-card--featured { grid-template-columns: 1fr; }
+      .case-card--featured .case-card__visual {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        min-height: 280px;
+      }
     }
 
+    /* ============================================================
+       RESPONSIVIDADE — Mobile (≤768px)
+       ============================================================ */
     @media (max-width: 768px) {
-      :root { --section-py: 72px; }
+      :root {
+        --section-py: 64px;
+        --container: 100%;
+      }
 
+      .container { padding: 0 20px; }
+
+      /* Navbar */
       .navbar__links, .navbar__cta { display: none; }
-      .navbar__hamburger { display: flex; }
-      .navbar__drawer { display: flex; }
+      .navbar__hamburger            { display: flex; }
+      .navbar__drawer               { display: flex; }
 
-      .hero__stats { gap: 24px; }
-
-      .services__grid { grid-template-columns: 1fr; }
-      .testimonials__grid { grid-template-columns: 1fr; }
-      .stats__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .faq__inner { grid-template-columns: 1fr; }
-      .faq__sticky { position: static; }
-      .cta-box { padding: 48px 28px; }
-      .footer__main { grid-template-columns: 1fr; }
-      .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
-      .about__inner { gap: 40px; }
+      /* Hero */
+      .hero                   { min-height: 100svh; padding-top: 80px; padding-bottom: 40px; }
+      .hero__title            { font-size: clamp(36px, 10vw, 56px); }
+      .hero__subtitle         { font-size: 16px; }
+      .hero__actions          { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .hero__actions .btn-primary,
+      .hero__actions .btn-secondary { width: 100%; justify-content: center; }
+      .hero__stats            { gap: 20px; margin-top: 48px; padding-top: 28px; flex-wrap: wrap; }
+      .hero__stat-value       { font-size: 26px; }
       .hero__title .line-blue::after { display: none; }
+
+      /* Sections */
+      .section-title          { font-size: clamp(28px, 8vw, 40px); }
+      .section-subtitle       { font-size: 16px; }
+
+      /* About */
+      .about__visual          { height: 240px; }
+      .about__pillars         { gap: 16px; }
+
+      /* Services */
+      .services__grid         { grid-template-columns: 1fr; }
+      .service-card           { padding: 28px 24px; }
+      .service-card__arrow    { display: none; }
+
+      /* Benefits */
+      .benefit-item           { padding: 18px; }
+      .benefits__visual       { height: 280px; }
+      .metrics-row            { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+      .metric-card            { padding: 12px; }
+      .metric-card__num       { font-size: 18px; }
+
+      /* Stats */
+      .stats__grid            { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .stat-item__value       { font-size: 36px; }
+
+      /* Dashboard */
+      .kpi-grid               { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .kpi-card               { padding: 14px; }
+      .kpi-value              { font-size: 20px; }
+      .dash-topbar            { padding: 0 16px; }
+      .dash-nav               { display: none; }
+      .dash-main              { padding: 20px 16px; }
+      .dash-main__title       { font-size: 16px; }
+
+      /* Cases */
+      .cases__grid            { grid-template-columns: 1fr; }
+      .case-card--featured    { grid-template-columns: 1fr; }
+      .case-card--featured .case-card__visual {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        min-height: 240px;
+        padding: 24px;
+      }
+      .case-card__content     { padding: 28px 24px; }
+      .case-card__title       { font-size: 22px; }
+
+      /* FAQ */
+      .faq__inner             { grid-template-columns: 1fr; gap: 40px; }
+      .faq__sticky            { position: static; }
+      .faq-item__question     { font-size: 14px; padding: 20px; }
+      .faq-item__answer-inner { padding: 0 20px 20px; }
+
+      /* CTA */
+      .cta-box                { padding: 48px 24px; border-radius: var(--radius-md); }
+      .cta-box__actions       { flex-direction: column; align-items: center; }
+      .cta-box__actions .btn-primary,
+      .cta-box__actions .btn-secondary { width: 100%; justify-content: center; }
+
+      /* Contato */
+      .contact__form          { padding: 28px 20px; }
+
+      /* Footer */
+      .footer__main           { grid-template-columns: 1fr; gap: 32px; }
+      .footer__bottom         { flex-direction: column; gap: 10px; text-align: center; }
+      .footer__brand p        { max-width: 100%; }
     }
 
+    /* ============================================================
+       RESPONSIVIDADE — Mobile pequeno (≤480px)
+       ============================================================ */
     @media (max-width: 480px) {
-      .hero__stats { flex-wrap: wrap; gap: 20px; }
-      .stats__grid { grid-template-columns: 1fr; }
-      .kpi-grid { grid-template-columns: 1fr 1fr; }
+      .container              { padding: 0 16px; }
+
+      /* Hero */
+      .hero__title            { font-size: clamp(30px, 9vw, 44px); }
+      .hero__badge            { font-size: 11px; padding: 5px 12px; }
+      .hero__stats            { gap: 16px; }
+      .hero__stat-value       { font-size: 22px; }
+
+      /* Stats */
+      .stats__grid            { grid-template-columns: 1fr 1fr; gap: 20px; }
+      .stat-item__value       { font-size: 30px; }
+
+      /* KPI / Dashboard */
+      .kpi-grid               { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .kpi-value              { font-size: 18px; }
+      .kpi-change             { font-size: 11px; }
+
+      /* Cases */
+      .condo-stats            { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+      .condo-stat__num        { font-size: 15px; }
+      .case-card__tags        { gap: 6px; }
+      .case-tag               { font-size: 11px; padding: 3px 10px; }
+
+      /* Serviços */
+      .service-card           { padding: 24px 20px; }
+      .service-card__title    { font-size: 17px; }
+
+      /* Buttons */
+      .btn-primary, .btn-secondary { font-size: 14px; padding: 13px 22px; }
+
+      /* Footer */
+      .footer__main           { gap: 24px; }
+      .footer__col ul         { gap: 10px; }
     }
   </style>
 </head>
@@ -1941,6 +2224,7 @@
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
         <a href="#showcase">Showcase</a>
+        <a href="#cases">Portfólio</a>
         <a href="#faq">FAQ</a>
         <a href="#contato">Contato</a>
       </div>
@@ -1963,6 +2247,7 @@
     <a href="#sobre"     onclick="closeMenu()">Sobre</a>
     <a href="#servicos"  onclick="closeMenu()">Serviços</a>
     <a href="#showcase"  onclick="closeMenu()">Showcase</a>
+    <a href="#cases"     onclick="closeMenu()">Portfólio</a>
     <a href="#faq"       onclick="closeMenu()">FAQ</a>
     <a href="#contato"   onclick="closeMenu()">Contato</a>
     <a href="#contato" class="btn-primary" onclick="closeMenu()" style="justify-content: center; margin-top: 8px;">Começar projeto →</a>
@@ -2389,51 +2674,97 @@
   </section>
 
   <!-- ============================================================
-       TESTIMONIALS
+       CASES — Projetos desenvolvidos
        ============================================================ -->
-  <section class="testimonials" id="depoimentos">
+  <section class="cases" id="cases">
     <div class="container">
-      <div class="testimonials__header reveal">
-        <span class="section-label">Depoimentos</span>
-        <h2 class="section-title">O que nossos <span class="accent">clientes dizem.</span></h2>
+      <div class="cases__header reveal">
+        <span class="section-label">Portfólio</span>
+        <h2 class="section-title">Produtos que <span class="accent">construímos.</span></h2>
+        <p class="section-subtitle" style="margin: 16px auto 0; text-align: center;">Software real, entregue. Veja o que a ProgramDev é capaz de construir.</p>
       </div>
 
-      <div class="testimonials__grid">
-        <div class="testimonial-card reveal">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"A ProgramDev entregou nosso SaaS em tempo recorde. O código é limpo, a arquitetura é sólida e a equipe entende de verdade o que estão construindo. Não é só execução, é parceria."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">RM</div>
-            <div>
-              <div class="testimonial-name">Rafael Mendes</div>
-              <div class="testimonial-role">CEO, NovaTech Solutions</div>
+      <div class="cases__grid">
+
+        <!-- CASE DESTAQUE — PredioHub -->
+        <div class="case-card case-card--featured reveal">
+          <!-- Visual / Mockup -->
+          <div class="case-card__visual">
+            <div class="condo-mockup">
+              <div class="condo-header">
+                <span class="condo-header-title">🏢 PredioHub — Painel do Síndico</span>
+                <span class="online-badge" style="font-size:11px;">Online</span>
+              </div>
+              <div class="condo-body">
+                <div class="condo-stats">
+                  <div class="condo-stat">
+                    <div class="condo-stat__num">248</div>
+                    <div class="condo-stat__label">Moradores</div>
+                  </div>
+                  <div class="condo-stat">
+                    <div class="condo-stat__num">12</div>
+                    <div class="condo-stat__label">Ocorrências</div>
+                  </div>
+                  <div class="condo-stat">
+                    <div class="condo-stat__num">97%</div>
+                    <div class="condo-stat__label">Adimplência</div>
+                  </div>
+                </div>
+                <div class="condo-row">
+                  <div class="condo-row__icon">🔔</div>
+                  <div class="condo-row__info">
+                    <div class="condo-row__title">Comunicado enviado</div>
+                    <div class="condo-row__sub">Reunião de condomínio — 28/05 às 19h</div>
+                  </div>
+                  <span class="condo-row__badge">Enviado</span>
+                </div>
+                <div class="condo-row">
+                  <div class="condo-row__icon">🔧</div>
+                  <div class="condo-row__info">
+                    <div class="condo-row__title">Manutenção agendada</div>
+                    <div class="condo-row__sub">Elevador Bloco B — 29/05</div>
+                  </div>
+                  <span class="condo-row__badge pending">Pendente</span>
+                </div>
+                <div class="condo-row">
+                  <div class="condo-row__icon">💳</div>
+                  <div class="condo-row__info">
+                    <div class="condo-row__title">Boletos gerados</div>
+                    <div class="condo-row__sub">Maio 2026 — 248 unidades</div>
+                  </div>
+                  <span class="condo-row__badge">Gerado</span>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <!-- Conteúdo -->
+          <div class="case-card__content">
+            <span class="case-card__tag">SaaS · Gestão de Condomínios</span>
+            <h3 class="case-card__title">PredioHub</h3>
+            <p class="case-card__desc">
+              Plataforma completa de gestão condominial desenvolvida do zero pela ProgramDev. Controle de moradores, comunicados, ocorrências, reservas de espaços, geração de boletos e muito mais — tudo em uma interface moderna e intuitiva.
+            </p>
+            <div class="case-card__tags">
+              <span class="case-tag">Next.js</span>
+              <span class="case-tag">Node.js</span>
+              <span class="case-tag">PostgreSQL</span>
+              <span class="case-tag">Supabase</span>
+              <span class="case-tag">Stripe</span>
+              <span class="case-tag">Multi-tenant</span>
+            </div>
+            <a href="https://prediohub.com.br" target="_blank" rel="noopener" class="case-card__link">
+              Visitar plataforma →
+            </a>
           </div>
         </div>
 
-        <div class="testimonial-card reveal">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Migramos um sistema legado crítico e a ProgramDev fez sem downtime e sem surpresas. Nível de profissionalismo que raramente se vê no mercado. Recomendo sem hesitar."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">JC</div>
-            <div>
-              <div class="testimonial-name">Juliana Costa</div>
-              <div class="testimonial-role">CTO, Finança Digital</div>
-            </div>
-          </div>
-        </div>
+      </div>
 
-        <div class="testimonial-card reveal">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Nossa API aguentou o pico de Black Friday — 150k requisições por minuto — sem cair. A arquitetura que a ProgramDev desenhou foi decisiva. Parceiros de verdade."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">LP</div>
-            <div>
-              <div class="testimonial-name">Lucas Pinheiro</div>
-              <div class="testimonial-role">Head of Engineering, ShopMax</div>
-            </div>
-          </div>
-        </div>
+      <!-- CTA portfólio -->
+      <div style="text-align:center; margin-top: 48px;" class="reveal">
+        <p style="font-size:15px; color: var(--text-secondary); margin-bottom: 20px;">Quer o seu produto aqui? Vamos conversar.</p>
+        <a href="#contato" class="btn-primary">Iniciar projeto →</a>
       </div>
     </div>
   </section>
@@ -2559,49 +2890,44 @@
           <span class="section-label">Contato</span>
           <h2 class="section-title">Vamos conversar<br /><span class="accent">sobre o seu projeto.</span></h2>
           <p class="section-subtitle" style="margin-top: 16px; font-size: 16px;">
-            Conte para a gente o que você quer construir. Respondemos em menos de 24 horas.
+            Preencha o formulário e a gente entra em contato pelo WhatsApp. Respondemos em menos de 24 horas.
           </p>
 
           <div class="contact__info-items">
             <div class="contact__info-item">
-              <div class="icon-wrap">📧</div>
               <span>contato@programdev.com.br</span>
             </div>
             <div class="contact__info-item">
-              <div class="icon-wrap">💬</div>
-              <span>WhatsApp: (21) 9 0000-0000</span>
+              <a href="https://wa.me/5521996431987" target="_blank" rel="noopener" style="color: var(--text-secondary);">
+                WhatsApp: (21) 99643-1987
+              </a>
             </div>
             <div class="contact__info-item">
-              <div class="icon-wrap">📍</div>
               <span>Rio de Janeiro, RJ — Brasil</span>
             </div>
-          </div>
-
-          <div class="contact__socials">
-            <a href="#" class="social-btn" title="LinkedIn">in</a>
-            <a href="#" class="social-btn" title="GitHub">⌥</a>
-            <a href="#" class="social-btn" title="Instagram">✦</a>
-            <a href="#" class="social-btn" title="Twitter/X">𝕏</a>
+            <div class="contact__info-item">
+              <a href="https://instagram.com/programdev.com.br" target="_blank" rel="noopener" style="color: var(--brand-blue-light);">@programdev.com.br</a>
+            </div>
           </div>
         </div>
 
         <!-- Formulário -->
         <div class="contact__form reveal">
           <div class="form-group">
-            <label class="form-label">Nome completo</label>
-            <input type="text" class="form-input" placeholder="Seu nome" />
+            <label class="form-label">Nome completo *</label>
+            <input type="text" id="f-nome" class="form-input" placeholder="Seu nome" />
           </div>
           <div class="form-group">
-            <label class="form-label">E-mail profissional</label>
-            <input type="email" class="form-input" placeholder="seu@email.com" />
+            <label class="form-label">E-mail</label>
+            <input type="email" id="f-email" class="form-input" placeholder="seu@email.com" />
           </div>
           <div class="form-group">
             <label class="form-label">Empresa (opcional)</label>
-            <input type="text" class="form-input" placeholder="Nome da sua empresa" />
+            <input type="text" id="f-empresa" class="form-input" placeholder="Nome da sua empresa" />
           </div>
           <div class="form-group">
-            <label class="form-label">Tipo de projeto</label>
-            <select class="form-input">
+            <label class="form-label">Tipo de projeto *</label>
+            <select id="f-tipo" class="form-input">
               <option value="">Selecione o tipo de projeto</option>
               <option>Sistema SaaS</option>
               <option>Aplicativo Mobile</option>
@@ -2613,10 +2939,13 @@
             </select>
           </div>
           <div class="form-group">
-            <label class="form-label">Descreva o projeto</label>
-            <textarea class="form-textarea" placeholder="Conte sobre o projeto, prazos, desafios e o que você espera da ProgramDev..."></textarea>
+            <label class="form-label">Descreva o projeto *</label>
+            <textarea id="f-msg" class="form-textarea" placeholder="Conte sobre o projeto, prazos, desafios e o que você espera da ProgramDev..."></textarea>
           </div>
-          <button class="form-submit" onclick="handleFormSubmit(event)">Enviar mensagem →</button>
+          <div id="form-error" style="display:none; color:#FF5F57; font-size:13px; margin-bottom:12px;"></div>
+          <button class="form-submit" id="form-btn" onclick="enviarWhatsApp()">
+            Enviar pelo WhatsApp →
+          </button>
         </div>
       </div>
     </div>
@@ -2809,22 +3138,69 @@
     }
 
     /* ============================================================
-       FORMULÁRIO — Feedback visual
+       FORMULÁRIO — Envia via WhatsApp
        ============================================================ */
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      const btn = e.target;
-      const original = btn.textContent;
+    function enviarWhatsApp() {
+      const nome    = document.getElementById('f-nome').value.trim();
+      const email   = document.getElementById('f-email').value.trim();
+      const empresa = document.getElementById('f-empresa').value.trim();
+      const tipo    = document.getElementById('f-tipo').value;
+      const msg     = document.getElementById('f-msg').value.trim();
+      const erro    = document.getElementById('form-error');
+      const btn     = document.getElementById('form-btn');
 
-      btn.textContent = '✓ Mensagem enviada!';
-      btn.style.background = '#28C840';
+      // Validação
+      erro.style.display = 'none';
+      if (!nome) {
+        erro.textContent = 'Por favor, informe seu nome.';
+        erro.style.display = 'block';
+        document.getElementById('f-nome').focus();
+        return;
+      }
+      if (!tipo) {
+        erro.textContent = 'Selecione o tipo de projeto.';
+        erro.style.display = 'block';
+        document.getElementById('f-tipo').focus();
+        return;
+      }
+      if (!msg) {
+        erro.textContent = 'Descreva o seu projeto antes de enviar.';
+        erro.style.display = 'block';
+        document.getElementById('f-msg').focus();
+        return;
+      }
+
+      // Monta mensagem formatada
+      let texto = `Olá! Vim pelo site da ProgramDev e gostaria de conversar sobre um projeto.\n\n`;
+      texto += `*Nome:* ${nome}\n`;
+      if (email)   texto += `*E-mail:* ${email}\n`;
+      if (empresa) texto += `*Empresa:* ${empresa}\n`;
+      texto += `*Tipo de projeto:* ${tipo}\n`;
+      texto += `\n*Descrição:*\n${msg}`;
+
+      // Abre WhatsApp
+      const numero = '5521996431987';
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+
+      // Feedback visual
+      btn.textContent = '✓ Abrindo WhatsApp...';
+      btn.style.background = '#25D366';
       btn.disabled = true;
 
+      window.open(url, '_blank');
+
+      // Reseta após 4s
       setTimeout(() => {
-        btn.textContent = original;
+        btn.textContent = 'Enviar pelo WhatsApp →';
         btn.style.background = '';
         btn.disabled = false;
-      }, 3500);
+        // Limpa o formulário
+        document.getElementById('f-nome').value    = '';
+        document.getElementById('f-email').value   = '';
+        document.getElementById('f-empresa').value = '';
+        document.getElementById('f-tipo').value    = '';
+        document.getElementById('f-msg').value     = '';
+      }, 4000);
     }
 
     /* ============================================================
